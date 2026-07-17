@@ -1,0 +1,21 @@
+
+// responsive breakpoints
+$breakpoints: (
+    sm: 768px,
+    md: 992px,
+    lg: 1200px,
+    xl: 1400px
+);
+
+
+
+
+
+// error message if wrong breakpoint is used
+$error_message: "Wrong breakpoint is used. Please use one of these breakpoints: sm, md, lg, xl";
+
+// colors
+$primary: #1473E6;
+$black: #2C2C2C;
+$black30: #4B4B4B;
+$black20: #6E6E6E;

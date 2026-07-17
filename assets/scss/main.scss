@@ -1,0 +1,60 @@
+// $Blue:#006AFF;
+
+// :export {
+//     Blue:$Blue
+// }
+
+.font-sf-pro {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.slid-fade-enter-active {
+  transition: all 0.4s;
+}
+.slide-fade-enter {
+  opacity: 0;
+  margin-left: 90px;
+}
+.slide-fade-leave-active {
+  transition: all 0.4s;
+  opacity: 0;
+  margin-left: -100px;
+}
+
+.component-fade-enter-active,
+.component-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.shimmer {
+  height: 100%;
+  width: 100%;
+  background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 100%;
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  border-radius: inherit;
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: shimmerAnim;
+  -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes shimmerAnim {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}

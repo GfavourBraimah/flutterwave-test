@@ -1,0 +1,18 @@
+// button
+.button {
+  cursor: pointer;
+  outline: none;
+  transition: 0.4s all;
+  border: none;
+  background-color: transparent;
+
+  &:active {
+    transform: scale(0.7);
+  }
+
+  [disabled] {
+    cursor: not-allowed;
+  }
+}
+
+

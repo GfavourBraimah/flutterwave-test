@@ -1,0 +1,127 @@
+$sizes: (sm, md, lg, xl);
+$weights: (400, 500, 700);
+
+@function pxToRem($px) {
+  @return #{$px/16}rem;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+//   @mixin aspect-ratio($width, $height) {
+//   width: 100%;
+//   height: calc(200px + 100px);
+// }
+
+@mixin max-line($limit) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: inherit;
+  -webkit-line-clamp: $limit; /* number of lines to show */
+  line-clamp: $limit;
+  -webkit-box-orient: vertical;
+}
+
+@mixin maintain-ratio($ratio: 1 1) {
+  $width: 100%;
+  $height: percentage(nth($ratio, 2) / nth($ratio, 1));
+  
+  width: $width;
+  height: 0;
+  padding-bottom: $height;
+}
+
+// @for $i from 1 through 100 {
+//   .opacity-#{$i} {
+//     opacity: #{$i/100} !important;
+//   }
+// }
+
+// @for $i from 10 through 1000 {
+//   .text-size-#{$i} {
+//     font-size: #{$i}px !important;
+//   }
+//   .line-height-#{$i} {
+//     line-height: #{$i}px !important;
+//   }
+
+//   .p-#{$i} {
+//     padding: #{$i}px !important;
+//   }
+
+//   .pr-#{$i} {
+//     padding-right: #{$i}px !important;
+//   }
+
+//   .pl-#{$i} {
+//     padding-left: #{$i}px !important;
+//   }
+
+//   .pb-#{$i} {
+//     padding-bottom: #{$i}px !important;
+//   }
+
+//   .pt-#{$i} {
+//     padding-top: #{$i}px !important;
+//   }
+
+//   .m-#{$i} {
+//     margin: #{$i}px !important;
+//   }
+
+//   .mr-#{$i} {
+//     margin-right: #{$i}px !important;
+//   }
+
+//   .ml-#{$i} {
+//     margin-left: #{$i}px !important;
+//   }
+
+//   .mb-#{$i} {
+//     margin-bottom: #{$i}px !important;
+//   }
+
+//   .mt-#{$i} {
+//     margin-top: #{$i}px !important;
+//   }
+
+//   .my-#{$i} {
+//     margin-top: #{$i}px !important;
+//     margin-bottom: #{$i}px !important;
+//   }
+
+//   .mx-#{$i} {
+//     margin-left: #{$i}px !important;
+//     margin-right: #{$i}px !important;
+//   }
+
+// }
+
+// @each $weight in $weights {
+//   .font-weight-#{$weight} {
+//     font-weight: #{$weight} !important;
+//   }
+// }
+
+// @each $size in $sizes {
+//   @include media-breakpoint-up(#{$size}) {
+//     .text-#{$size}-right {
+//       text-align: right !important;
+//     }
+//   }
+// }
