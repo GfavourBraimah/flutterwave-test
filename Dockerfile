@@ -1,8 +1,6 @@
 # Build stage
 FROM node:14 AS builder
 
-LABEL org.opencontainers.image.source="https://github.com/gfavourbraimah/flutterwave-test"
-
 WORKDIR /app
 
 # Copy package files
@@ -19,6 +17,9 @@ RUN npm run generate
 
 # Production stage - serve static files with simple HTTP server
 FROM node:14-slim
+
+# THE LABEL MUST GO HERE (In the final stage)
+LABEL org.opencontainers.image.source="https://github.com/GfavourBraimah/flutterwave-test"
 
 WORKDIR /app
 
