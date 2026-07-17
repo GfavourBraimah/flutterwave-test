@@ -1,6 +1,8 @@
 # Build stage
 FROM node:14 AS builder
 
+LABEL org.opencontainers.image.source="https://github.com/gfavourbraimah/flutterwave-test"
+
 WORKDIR /app
 
 # Copy package files
